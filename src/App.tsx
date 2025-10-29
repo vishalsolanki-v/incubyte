@@ -1,13 +1,21 @@
 import { useState } from 'react';
-import { add } from './stringCalculator';
+import { add, validateNumberString } from './stringCalculator';
 
 const App = () => {
   const [input, setInput] = useState('');
   const [result,setResult] = useState<number | null>(null);
+  const [error,setError] = useState(false);
 
   const handleCalculate = () => {
-   const result = add(input);
-   setResult(result);
+  const isInvalid = validateNumberString(input);
+  if (isInvalid) {
+    setError(true);
+    return;
+  }
+
+  const result = add(input);
+  setResult(result);
+  setError(false);
   };
 
   return (
@@ -39,8 +47,8 @@ const App = () => {
         }}>
         Calculate
       </div>
-
-      {result !== null && <p style={{ color: 'green' }}>Result: {result}</p>}
+      {error && <p style={{ color: 'red' }}>Invalid Input Value</p>}
+      {result !== null && !error && <p style={{ color: 'green' }}>Result: {result}</p>}
 
       <div role='alert'>
         <p>Make sure you enter numbers correctly!</p>
