@@ -17,8 +17,8 @@ This project contains a **String Calculator template** built using React. The pr
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/string-calculator.git
-   cd string-calculator
+   git clone https://github.com/yourusername/incubyte
+   cd incubyte
    ```
 
 2. **Install Dependencies**
@@ -30,16 +30,12 @@ This project contains a **String Calculator template** built using React. The pr
 3. **Run the Application**
 
    ```bash
-   npm start
+   npm run dev
    ```
 
 4. **Run Tests**
 
    ```bash
-   npm test
+   npm run test
    ```
 
-## Task for Candidates
-
-- Implement the functionality of the String Calculator following TDD best practices.
-- Resolve accessibility issues in the `App.tsx`.
